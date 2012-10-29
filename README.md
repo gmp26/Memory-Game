@@ -4,6 +4,13 @@ Memory-Game configured for NRICH
 Example app that implements the famous memory game of finding matching pairs of cards. Configured for installation
 on NRICH.
 
+##Issues
+NRICH editor replaces <img ng-src="foo"> with <img ng- src="foo"> somewhere.
+Paths to images are problematic
+Paths to local .js could be easier (OKish with a hacked NRICH.local)
+NRICH editor replace <img ng:src="{{path}}/img/foo"> with <img ng:src="<exapnded path>/foo"> 
+	- expansion is expected, but the missing 'img' isn't.
+	
 The test suite is now based on testacular, so the README from the angular seed project now applies. It's reproduced below.
 
 # angular-seed — the seed for AngularJS apps

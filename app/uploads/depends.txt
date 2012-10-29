@@ -1,0 +1,3 @@
+/javascript/angular/angular.js
+app.js
+game.js
