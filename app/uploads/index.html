@@ -3,24 +3,24 @@
 	- as an XML Upload
 	
 	Once inserted, wrap in the following div:
-	<div  ng:app="app">...</div>
+	<div  ng-app="app">...</div>
 -->
-<div ng:app="app">
-<div ng:controller="GameCtrl">
+<div ng-app="app">
+<div ng-controller="GameCtrl">
   <div>Pairs left to match: {{game.unmatchedPairs}}</div>
-  <div>Matching: {{game.firstPick.title}}</div>
+  <div>Matching- {{game.firstPick.title}}</div>
   <table>
-    <tr ng:repeat="row in game.grid">
-      <td ng:repeat="tile in row" ng:click="game.flipTile(tile)">
+    <tr ng-repeat="row in game.grid">
+      <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
         <!-- this entire block can be replaced with our custom component mgCard: 
         <mg-card tile="tile" path="{{path}}"></mg-card>
         -->
 
         <div class="container">
-          <div class="card" ng:class="{flipped: tile.flipped}">
-              <img class="front" ng:src="{{path}}/img/back.png">
-              <img class="back" ng:src="{{path}}/img/{{tile.title}}.png">
+          <div class="card" ng-class="{flipped: tile.flipped}">
+              <img class="front" ng-src="{{path}}/img/back.png">
+              <img class="back" ng-src="{{path}}/img/{{tile.title}}.png">
           </div>
         </div>
 
