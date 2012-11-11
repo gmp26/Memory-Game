@@ -1,17 +1,38 @@
 Memory-Game configured for NRICH
 ================================
 
-Example app that implements the famous memory game of finding matching pairs of cards. Configured for installation
-on NRICH.
+This is a sample AngularJS app that implements a memory game of finding matching pairs of cards that has 
+been configured for installation on NRICH.
 
-##Issues
-NRICH editor replaces <img ng-src="foo"> with <img ng- src="foo"> somewhere.
-Paths to images are problematic
-Paths to local .js could be easier (OKish with a hacked NRICH.local)
-NRICH editor replace <img ng:src="{{path}}/img/foo"> with <img ng:src="<exapnded path>/foo"> 
-	- expansion is expected, but the missing 'img' isn't.
+    Warning
+    =======
+    The NRICH wysiwyg editor is bad news for HTML marked up with angular ng- attributes.
 	
-The test suite is now based on testacular, so the README from the angular seed project now applies. It's reproduced below.
+    Ensure you set wysiwyg-edit to False in the NRICH tag editor.
+
+    Checkout how this app handles paths to local images so they work both for local test and on site.
+
+# Directory structure and Installation
+
+Originally based on the angular-seed project, the file tree has been modified to allow both offline testing and installation on NRICH. The local app can be tested in the normal way using testacular - see the angular-seed instructions below. All application code is in the ./app. The local html file is in ./app/index.html, and which references the common site code. The original angular-seed directory structure is documented below.
+
+To install on NRICH:
+
+1. Create a new resource and tag it as usual.
+
+1. Set wysiwyg-edit to False in the NRICH tag editor.
+
+1. Either copy-paste ./app/site/index.html into the source editor for the resource, or upload it using the uploadXML facility. 
+
+1. Edit .app/site/uploads/depends.txt to ensure that any custom javascript is included. Make sure you include all the js files in .app/site/uploads, as well as a reference to the angular.js or angular.min.js library on NRICH.
+
+1. Upload the contents of uploads .app/site/uploads to the resource as media uploads.
+
+Other angular resources on NRICH will hopefully follow this same pattern. 
+
+The remainder of this document is inherited from the angular-seed Readme, as the test setup is identical.
+
+----
 
 # angular-seed — the seed for AngularJS apps
 
@@ -105,6 +126,8 @@ fetch the changes and merge them into your project with git.
 
 
 ## Directory Layout
+
+    Note that MemoryNRICH adapts this
 
     app/                --> all of the files to be used in production
       css/              --> css files

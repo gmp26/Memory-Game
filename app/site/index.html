@@ -14,16 +14,17 @@
       <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
         <!-- this entire block can be replaced with our custom component mgCard: 
-        <mg-card tile="tile" path="{{path}}"></mg-card>
-        -->
-
+		-->
+        <mg-card tile="tile" cpath="{{cpath}}"></mg-card>
+        
+<!--
         <div class="container">
           <div class="card" ng-class="{flipped: tile.flipped}">
-              <img class="front" ng-src="{{path}}/img/back.png">
-              <img class="back" ng-src="{{path}}/img/{{tile.title}}.png">
+              <img class="front" ng-src="{{cpath}}/img/back.png">
+              <img class="back" ng-src="{{cpath}}/img/{{tile.title}}.png">
           </div>
         </div>
-
+-->
       </td>
     </tr>
   </table>

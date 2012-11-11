@@ -2,7 +2,7 @@
 
 describe('MemoryGameApp', function() {
 
-  beforeEach(module('memoryGameApp'));
+  beforeEach(module('app'));
 
 
   describe('GameCtrl', function(){
@@ -41,11 +41,12 @@ describe('MemoryGameApp', function() {
           element;
 
       $rootScope.tileModel = tile;
-      element = $compile('<mg-card tile="tileModel"></mg-card>')($rootScope);
+      element = $compile('<mg-card tile="tileModel" cpath="aPath"></mg-card>')($rootScope);
       $rootScope.$apply();
 
       expect(element.find('div').find('div').find('img').eq(1).attr('src')).
-          toBe('img/sampleTile.png');
+          toBe('aPath/sampleTile.png');
     }));
   });
+
 });
