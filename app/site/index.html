@@ -13,10 +13,8 @@
     <tr ng-repeat="row in game.grid">
       <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
-        <!-- this entire block can be replaced with our custom component mgCard: 
-		-->
-        <mg-card tile="tile" cpath="{{cpath}}"></mg-card>
-        
+        <div game-card tile="tile"></div>
+       
 <!--
         <div class="container">
           <div class="card" ng-class="{flipped: tile.flipped}">

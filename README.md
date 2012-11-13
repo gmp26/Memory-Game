@@ -1,6 +1,8 @@
 Memory-Game configured for NRICH
 ================================
 
+[Game Demo](http://nrich.maths.org/9595)
+
 This is a sample AngularJS app that implements a memory game of finding matching pairs of cards that has 
 been configured for installation on NRICH.
 
