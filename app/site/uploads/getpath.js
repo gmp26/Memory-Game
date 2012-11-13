@@ -2,16 +2,22 @@
 
 angular.module('getpath', [], function($provide) {
   $provide.factory('contentPath', function() {
-	var scripts = document.getElementsByTagName('script'),
-        script = scripts[scripts.length - 1],
- 		src;
+	
+		var scripts = document.getElementsByTagName('script'),
+	      script,
+	 		  src;
 
-    if (script.getAttribute.length !== undefined) {
-        src = script.src;
-    }
-	else {
-    	src = script.getAttribute('src', -1);
-	}
-	return "/"+src.split('/').slice(3,-1).join('/');
+		for(var i=scripts.length-1; i > 0; i--) {
+			script = scripts[i];
+		  if (script.getAttribute.length !== undefined) {
+		    src = script.src;
+		  }
+			else {
+		    src = script.getAttribute('src', -1);
+			}
+			if(src.indexOf('getpath') >= 0)
+				return "/"+src.split('/').slice(3,-1).join('/');
+		}
+		throw new Error("contentPath unresolved");
   });
 });

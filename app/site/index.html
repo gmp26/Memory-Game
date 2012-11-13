@@ -5,27 +5,27 @@
 	Once inserted, wrap in the following div:
 	<div  ng-app="app">...</div>
 -->
-<div ng-app="app">
-<div ng-controller="GameCtrl">
-  <div>Pairs left to match: {{game.unmatchedPairs}}</div>
-  <div>Matching- {{game.firstPick.title}}</div>
-  <table>
-    <tr ng-repeat="row in game.grid">
-      <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
+<div  ng-app="app">
+  <div ng-controller="GameCtrl">
+	  <div>Pairs left to match: {{game.unmatchedPairs}}</div>
+	  <div>Matching- {{game.firstPick.title}}</div>
+	  <table>
+	    <tr ng-repeat="row in game.grid">
+	      <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
 
-        <div game-card tile="tile"></div>
+	        <div game-card tile="tile"></div>
        
-<!--
-        <div class="container">
-          <div class="card" ng-class="{flipped: tile.flipped}">
-              <img class="front" ng-src="{{cpath}}/img/back.png">
-              <img class="back" ng-src="{{cpath}}/img/{{tile.title}}.png">
-          </div>
-        </div>
--->
-      </td>
-    </tr>
-  </table>
-  <div class="message">{{game.message}}</div>
-</div>
+	<!--
+	        <div class="container">
+	          <div class="card" ng-class="{flipped: tile.flipped}">
+	              <img class="front" ng-src="{{cpath}}/img/back.png">
+	              <img class="back" ng-src="{{cpath}}/img/{{tile.title}}.png">
+	          </div>
+	        </div>
+	-->
+	      </td>
+	    </tr>
+	  </table>
+	  <div class="message">{{game.message}}</div>
+  </div>
 </div>
