@@ -1,11 +1,12 @@
 'use strict';
-
+/**
+ * @see <a href="http://stackoverflow.com/questions/2161159/get-script-path">This Stack Overflow Question</a>
+ */
 angular.module('getpath', [], function($provide) {
   $provide.factory('contentPath', function() {
 	var scripts = document.getElementsByTagName('script'),
         script = scripts[scripts.length - 1],
- 		src;
-
+ 		src;	
     if (script.getAttribute.length !== undefined) {
         src = script.src;
     }
