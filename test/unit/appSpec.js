@@ -1,9 +1,8 @@
 /* jasmine specs for controllers go here */
 
-describe('MemoryGameApp', function() {
+describe('MemoryNRICH', function() {
 
   beforeEach(module('app'));
-
 
   describe('GameCtrl', function(){
     var gameCtrl, scope;
@@ -34,18 +33,21 @@ describe('MemoryGameApp', function() {
     });
   });
 
-
-  describe('mgCard directive', function() {
-    it('should render a card using divs and bind it to a tile', inject(function($compile, $rootScope) {
+  
+  describe('gameCard directive', function() {
+	
+	beforeEach(module('getpath'));
+	
+    it('should render a card using divs and bind it to a tile', inject(function($compile, $rootScope, contentPath) {
       var tile = new Tile('sampleTile'),
           element;
 
       $rootScope.tileModel = tile;
-      element = $compile('<mg-card tile="tileModel" cpath="aPath"></mg-card>')($rootScope);
+      element = $compile('<game-card tile="tileModel"></game-card>')($rootScope);
       $rootScope.$apply();
 
       expect(element.find('div').find('div').find('img').eq(1).attr('src')).
-          toBe('aPath/sampleTile.png');
+          toBe(contentPath+'/sampleTile.png');
     }));
   });
 

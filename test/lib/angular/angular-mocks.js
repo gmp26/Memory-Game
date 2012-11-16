@@ -126,7 +126,6 @@ angular.mock.$Browser = function() {
    * @description
    * Current milliseconds mock time.
    */
-
   self.$$baseHref = '';
   self.baseHref = function() {
     return this.$$baseHref;
